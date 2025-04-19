@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahara Glow | Radiant Beauty Essentials</title>
+  <style>
+    :root {
+      --blush-pink: #f7d6e0;
+      --warm-beige: #f2e2d2;
+      --soft-nude: #e8d0c3;
+      --accent: #d48c9f;
+      --dark-text: #4a3e3e;
+      --light-text: #8a7e7e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark-text);
+    }
+    
+    body {
+      background-color: #fcfaf8;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Navigation */
+    header {
+      padding: 20px 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .cta-button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .cta-button:hover {
+      background-color: #c07c8d;
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, var(--blush-pink) 0%, var(--warm-beige) 100%);
+      text-align: center;
+      border-radius: 0 0 50px 50px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: var(--light-text);
+    }
+    
+    /* Products Section */
+    .products {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 60px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .product-card {
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .product-image {
+      width: 200px;
+      height: 200px;
+      background-color: var(--warm-beige);
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .product-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .product-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .product-desc {
+      color: var(--light-text);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      padding: 100px 0;
+      background-color: var(--warm-beige);
+      border-radius: 50px;
+    }
+    
+    .benefits-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .benefit-card {
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--blush-pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+    
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .testimonials-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .testimonial-card {
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .testimonial-text::before {
+      content: """;
+      font-size: 4rem;
+      color: var(--blush-pink);
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      opacity: 0.5;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--soft-nude);
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .author-info h4 {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .author-info p {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--soft-nude) 0%, var(--blush-pink) 100%);
+      text-align: center;
+      border-radius: 50px;
+      margin: 40px 0;
+    }
+    
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: var(--light-text);
+    }
+    
+    .waitlist-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 10px;
+    }
+    
+    .waitlist-input {
+      flex: 1;
+      padding: 15px 20px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 60px 0;
+      background-color: white;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .footer-links a {
+      text-decoration: none;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--blush-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Zahara Glow</div>
+        <div class="nav-links">
+          <a href="#products">Products</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#testimonials">Testimonials</a>
+        </div>
+        <a href="#waitlist"><button class="cta-button">Join Waitlist</button></a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Radiant Beauty Essentials</h1>
+      <p>Discover skincare that celebrates your natural glow with our nourishing, plant-based formulas designed for everyday radiance.</p>
+      <a href="#waitlist"><button class="cta-button">Join Our Waitlist</button></a>
+    </div>
+  </section>
+  
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <div class="container">
+      <h2 class="section-title">Our Collection</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/200/200" alt="Glow Serum Bottle" />
+          </div>
+          <h3 class="product-title">Rose Quartz Serum</h3>
+          <p class="product-price">$42</p>
+          <p class="product-desc">Hydrating formula with hyaluronic acid and rose extract for plump, dewy skin.</p>
+          <button class="cta-button">Coming Soon</button>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/200/200" alt="Face Cream Jar" />
+          </div>
+          <h3 class="product-title">Honey Dew Moisturizer</h3>
+          <p class="product-price">$38</p>
+          <p class="product-desc">Lightweight yet nourishing cream with honey and aloe for all-day moisture.</p>
+          <button class="cta-button">Coming Soon</button>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/200/200" alt="Face Mask Package" />
+          </div>
+          <h3 class="product-title">Golden Hour Mask</h3>
+          <p class="product-price">$28</p>
+          <p class="product-desc">Weekly treatment with turmeric and vitamin C for brightening and evening skin tone.</p>
+          <button class="cta-button">Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Benefits Section -->
+  <section id="benefits" class="benefits">
+    <div class="container benefits-container">
+      <h2 class="section-title">Why Zahara Glow?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="benefit-title">Plant-Based Formula</h3>
+          <p>Our ingredients are thoughtfully sourced from sustainable farms and botanical gardens.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 class="benefit-title">Dermatologist Tested</h3>
+          <p>Every product is rigorously tested to ensure safety and efficacy for all skin types.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="benefit-title">Cruelty-Free</h3>
+          <p>We never test on animals and are proudly certified by Leaping Bunny and PETA.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <h3 class="benefit-title">Eco-Friendly Packaging</h3>
+          <p>Our packaging is made from recycled materials and is fully biodegradable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Community Says</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">The Rose Quartz Serum transformed my skin in just two weeks. My complexion has never looked more radiant and even-toned.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="/api/placeholder/50/50" alt="Sophia avatar" />
+            </div>
+            <div class="author-info">
+              <h4>Sophia J.</h4>
+              <p>Early Access Member</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">I've tried countless moisturizers but the Honey Dew is in a league of its own. It's lightweight yet deeply nourishing, perfect for my sensitive skin.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="/api/placeholder/50/50" alt="Marcus avatar" />
+            </div>
+            <div class="author-info">
+              <h4>Marcus T.</h4>
+              <p>Skincare Enthusiast</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">The Golden Hour Mask is my Sunday night ritual now. The glow it gives me lasts for days, and I've received so many compliments!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="/api/placeholder/50/50" alt="Ava avatar" />
+            </div>
+            <div class="author-info">
+              <h4>Ava L.</h4>
+              <p>Beauty Creator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section id="waitlist" class="cta-section">
+    <div class="container">
+      <h2>Be The First To Know</h2>
+      <p>Join our waitlist to get exclusive early access, special launch discounts, and updates on our upcoming product line.</p>
+      <form class="waitlist-form" action="#" method="POST">
+        <input type="email" class="waitlist-input" placeholder="Enter your email" required>
+        <button type="submit" class="cta-button">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Zahara Glow</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="social-icon"><i class="far fa-envelope"></i></a>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Zahara Glow. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
